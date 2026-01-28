@@ -1,0 +1,204 @@
+/* =========================================
+   VARIABLES INSTITUCIONALES
+========================================= */
+:root {
+    --conalep-green: #007E67;
+    --conalep-dark: #005a4a;
+    --gob-guinda: #9D2449;
+    --gold: #D4C19C; /* Color dorado oficial gobierno */
+    --text-main: #333;
+    --text-light: #666;
+    --bg-light: #f9f9f9;
+    --white: #fff;
+    --shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* RESETEO BÁSICO */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* CONTENEDOR CENTRAL */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* =========================================
+   1. TOP BAR (Barra gris arriba)
+========================================= */
+.top-bar { background: #f1f1f1; padding: 8px 0; font-size: 0.85rem; border-bottom: 1px solid #ddd; }
+.top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+.social-icons a { margin-right: 15px; color: var(--text-light); }
+.social-icons a:hover { color: var(--conalep-green); }
+.contact-mini span { margin-left: 15px; color: var(--text-light); }
+
+/* =========================================
+   2. HEADER & NAV
+========================================= */
+.main-header { background: var(--white); box-shadow: var(--shadow); padding: 15px 0; border-bottom: 5px solid var(--conalep-green); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo { height: 50px; }
+.site-title h1 { font-size: 1.5rem; color: var(--conalep-green); line-height: 1.1; }
+.site-title p { font-size: 0.8rem; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+
+/* Menú */
+.main-nav ul { display: flex; gap: 20px; }
+.main-nav a { font-weight: 500; color: var(--text-main); font-size: 1rem; padding: 5px 0; position: relative; }
+.main-nav a:hover, .main-nav a.active { color: var(--conalep-green); }
+/* Línea animada debajo del link */
+.main-nav a::after { content: ''; display: block; width: 0; height: 2px; background: var(--conalep-green); transition: width .3s; }
+.main-nav a:hover::after { width: 100%; }
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+.hero-banner {
+    background: linear-gradient(rgba(0,126,103,0.8), rgba(0,126,103,0.8)), url('../assets/img/plantel-bg.jpg'); /* Necesitas una foto de fondo */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+.hero-banner h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* =========================================
+   4. LAYOUT PRINCIPAL (GRID 2 COLUMNAS)
+========================================= */
+.main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 partes para contenido, 1 para barra lateral */
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Columna Izquierda (Contenido) */
+.section-title { font-size: 1.8rem; color: var(--conalep-green); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+.info-card, .news-section { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 30px; }
+.plantel-details p { margin-bottom: 15px; font-size: 1.05rem; }
+.plantel-details i { color: var(--conalep-green); width: 25px; text-align: center; margin-right: 10px; }
+.map-placeholder { background: #eee; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; margin-top: 20px; color: #888; }
+
+
+/* Columna Derecha (Sidebar) */
+.sidebar-widget { background: var(--white); padding: 25px; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 30px; border-top: 4px solid var(--gob-guinda); }
+.sidebar-widget h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-main); }
+.career-list{
+    padding: 0;
+}
+.carrer-list li{
+    list-style: none;
+    border-bottom: 10px solid#eee;
+}
+.carrer-list li:last-child{
+    border-bottom: none;
+}
+.carrrer-list a{
+    display: block;
+    padding:12px 10px;
+    color:(--text-main);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 0px solid transparent;
+    border-radius: 4px;
+}
+/*efecto para mouse*/
+.carrer-list a:hover{
+    color: var(--conalep-green);
+    background-color: #e0f2f1;
+    padding-left: 20px;
+    border-left: 5px solid var(--conalep-green);
+    font-weight: 700;
+}
+
+
+/* ESTILO ESPECIAL PARA TUS APPS (Espacio Digital) */
+.digital-space { background: #fff; border-top: 4px solid var(--conalep-green); }
+.quick-links { display: flex; flex-direction: column; gap: 10px; }
+.btn-link {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 5px;
+    background: #f4f4f4;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: 0.2s;
+    border-left: 4px solid transparent;
+}
+.btn-link i { margin-right: 10px; color: var(--conalep-green); }
+.btn-link:hover { background: var(--conalep-green); color: var(--white); border-left: 4px solid var(--gob-guinda); }
+.btn-link:hover i { color: var(--white); }
+
+/* Oferta Educativa Lista */
+.career-list li { border-bottom: 1px solid #eee; padding: 10px 0; }
+.career-list li:last-child { border: none; }
+.career-list a:hover { color: var(--conalep-green); padding-left: 5px; }
+/* =========================================
+   LISTA DE CARRERAS (Efecto Hover Pro)
+========================================= */
+.career-list {
+    padding: 0;
+}
+
+.career-list li {
+    list-style: none;
+    border-bottom: 1px solid #eee; /* Línea separadora sutil */
+}
+
+/* Quitamos la línea del último para que se vea limpio */
+.career-list li:last-child {
+    border-bottom: none;
+}
+
+.career-list a {
+    display: block;          /* Hace que todo el renglón sea clicable, no solo el texto */
+    padding: 12px 10px;      /* Espacio para respirar */
+    color: var(--text-main);
+    font-weight: 500;
+    transition: all 0.3s ease; /* La magia: hace que el cambio sea suave */
+    border-left: 0px solid transparent; /* Preparamos el borde invisible */
+    border-radius: 4px;      /* Bordes un poco redondeados */
+}
+
+/* --- EL EFECTO AL PASAR EL MOUSE --- */
+.career-list a:hover {
+    color: var(--conalep-green);       /* Texto verde oficial */
+    background-color: #e0f2f1;         /* Fondo verde menta muy clarito */
+    padding-left: 20px;                /* Se desliza a la derecha */
+    border-left: 5px solid var(--conalep-green); /* Aparece la barra lateral */
+    font-weight: 700;                  /* Se pone negrita */
+}
+
+/* =========================================
+   5. RESPONSIVE (MÓVIL)
+========================================= */
+@media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; /* Una sola columna en celular */ }
+    .header-inner { flex-direction: column; text-align: center; }
+    .main-nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+    .top-bar-content { flex-direction: column; gap: 5px; text-align: center; }
+}
+/*fecha actual*/
+#fecha-actual{
+    text-transform: uppercase;
+}
+
+/* ---estilo para el mapa de google maps--- */
+.map-container {
+    position:relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}

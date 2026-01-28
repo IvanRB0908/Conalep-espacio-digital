@@ -134,9 +134,8 @@ ul { list-style: none; }
 .career-list li { border-bottom: 1px solid #eee; padding: 10px 0; }
 .career-list li:last-child { border: none; }
 .career-list a:hover { color: var(--conalep-green); padding-left: 5px; }
-/* =========================================
-   LISTA DE CARRERAS (Efecto Hover Pro)
-========================================= */
+
+/*LISTA DE CARRERAS (Efecto Hover Pro)*/
 .career-list {
     padding: 0;
 }

@@ -23,7 +23,7 @@ ul { list-style: none; }
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
 /* =========================================
-   1. TOP BAR (Barra gris arriba)
+1. TOP BAR (Barra gris arriba)
 ========================================= */
 .top-bar { background: #f1f1f1; padding: 8px 0; font-size: 0.85rem; border-bottom: 1px solid #ddd; }
 .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
@@ -32,7 +32,7 @@ ul { list-style: none; }
 .contact-mini span { margin-left: 15px; color: var(--text-light); }
 
 /* =========================================
-   2. HEADER & NAV
+2. HEADER & NAV
 ========================================= */
 .main-header { background: var(--white); box-shadow: var(--shadow); padding: 15px 0; border-bottom: 5px solid var(--conalep-green); }
 .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
@@ -50,7 +50,7 @@ ul { list-style: none; }
 .main-nav a:hover::after { width: 100%; }
 
 /* =========================================
-   3. HERO SECTION
+3. HERO SECTION
 ========================================= */
 .hero-banner {
     background: linear-gradient(rgba(0,126,103,0.8), rgba(0,126,103,0.8)), url('../assets/img/plantel-bg.jpg'); /* Necesitas una foto de fondo */
@@ -64,7 +64,7 @@ ul { list-style: none; }
 .hero-banner h2 { font-size: 2.5rem; margin-bottom: 10px; }
 
 /* =========================================
-   4. LAYOUT PRINCIPAL (GRID 2 COLUMNAS)
+4. LAYOUT PRINCIPAL (GRID 2 COLUMNAS)
 ========================================= */
 .main-layout {
     display: grid;
@@ -155,8 +155,8 @@ ul { list-style: none; }
     padding: 12px 10px;      /* Espacio para respirar */
     color: var(--text-main);
     font-weight: 500;
-    transition: all 0.3s ease; /* La magia: hace que el cambio sea suave */
-    border-left: 0px solid transparent; /* Preparamos el borde invisible */
+    transition: all 0.3s ease;
+    border-left: 0px solid transparent;
     border-radius: 4px;      /* Bordes un poco redondeados */
 }
 
@@ -170,7 +170,7 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   5. RESPONSIVE (MÓVIL)
+5. RESPONSIVE (MÓVIL)
 ========================================= */
 @media (max-width: 768px) {
     .main-layout { grid-template-columns: 1fr; /* Una sola columna en celular */ }
@@ -229,4 +229,164 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     text-align: justify;
+}
+
+/*---------------------
+ESTILOS PARA EL FOOTER
+----------------------*/
+footer {
+    background-color: #2c3e50;
+    color:#ecf0f1;
+    padding-top: 40px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex; /*Hace que se acomoden al lado del otro*/
+    justify-self: space-between;
+    padding: 0 20px 40px;
+    flex-wrap: wrap; /*Para que se acomoden en pantallas pequeñas*/
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1; /*Cada columna toma el mismo espacio*/
+    min-width: 250px; /*Ancho mínimo para que no se achiquen demasiado*/
+}
+
+.footer-col h3{
+    color: var(--conalep-green);
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-col p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.footer-col i {
+    color: var(--conalep-green);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center; 
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--conalep-green);
+    padding-left: 5px;/*Efecto de desplazamiento*/
+}
+
+/*barra inferior copyright*/
+.footer-bottom {
+    background-color: #1a252f;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #95a5a6;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-col strong {/* Estilo para resaltar texto importante */
+    color: white;
+    font-weight: 600;
+}
+
+/*------------------
+DISEÑO SECCION DE NOTICIAS
+---------------------*/
+
+.news-section {
+    margin-top: 30px;/* Separacion del mapa*/
+    background:#fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.news-section h3 {
+    color: var(--conalep-green);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.news-card {
+    display: flex;
+    align-items: flex-start;/*alineacion al inicio por si el texto es largo*/
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transoform 0.2s ease;
+}
+
+.news-card:last-child {
+    border-bottom: none; /* Quitar la linea del ultimo */
+}
+
+.news-card:hover {
+    transform: translateY(5px); /* Efecto de elevacion al pasar el mouse */
+}
+
+/*seccion fecha*/
+.new-date {
+    background-color: var(--conalep-green);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align:center;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-date day {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.new-date month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.new-date year {
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.new-content h4{
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.new-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }

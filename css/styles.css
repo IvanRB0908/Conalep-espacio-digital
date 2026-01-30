@@ -312,81 +312,143 @@ footer {
     font-weight: 600;
 }
 
-/*------------------
-DISEÑO SECCION DE NOTICIAS
----------------------*/
-
-.news-section {
-    margin-top: 30px;/* Separacion del mapa*/
-    background:#fff;
-    padding: 25px;
+/* --- ESTILOS DE LA GALERÍA DE IMÁGENES --- */
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Altura fija para que no brinque la página */
+    margin: 30px 0; /* Separación de arriba y abajo */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-.news-section h3 {
-    color: var(--conalep-green);
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    font-size: 1.2rem;
+    overflow: hidden; /* Oculta las fotos que no están en turno */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.news-card {
+.gallery-track {
     display: flex;
-    align-items: flex-start;/*alineacion al inicio por si el texto es largo*/
-    gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid #f0f0f0;
-    transition: transoform 0.2s ease;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animación suave */
 }
 
-.news-card:last-child {
-    border-bottom: none; /* Quitar la linea del ultimo */
+.gallery-slide {
+    min-width: 100%; /* Cada foto ocupa el 100% del espacio */
+    height: 100%;
 }
 
-.news-card:hover {
-    transform: translateY(5px); /* Efecto de elevacion al pasar el mouse */
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* RECORTA la imagen para llenar el hueco sin deformarse */
+    display: block;
 }
 
-/*seccion fecha*/
-.new-date {
-    background-color: var(--conalep-green);
+/* Botones flotantes (Flechas) */
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    text-align:center;
-    min-width: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
 }
 
-.new-date day {
+.gallery-btn:hover {
+    background: var(--conalep-green);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* ------------------
+ESTILOS PARA EL BOTON CAMBIAR TEMA
+-------------------- */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
     font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1;
+    color: var(--text-light);
+    transition: color 0.3s;
 }
 
-.new-date month {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-top: 2px;
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-.new-date year {
-    font-size: 0.8rem;
-    margin-top: 2px;
+/* 1. LAS TARJETAS PRINCIPALES */
+body.dark-mode .info-card,
+body.dark-mode .sidebar-widget,
+body.dark-mode .news-section {
+    background-color: #1e1e1e; /* Gris oscuro */
+    color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra negra */
+    border: 1px solid #333;
 }
 
-.new-content h4{
-    margin: 0 0 5px 0;
-    color: #333;
-    font-size: 1rem;
+/* 2. TÍTULOS */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .section-title,
+body.dark-mode .plantel-details strong {
+    color: var(--conalep-green);
 }
 
-.new-content p {
-    margin: 0;
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.4;
+/* 3. TEXTOS Y PÁRRAFOS */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode i {
+    color: #ccc;
+}
+
+/* 4. ENLACES */
+body.dark-mode a {
+    color: #4db6ac;
+}
+
+/* 5. ARREGLO ESPECIAL PARA EL MAPA */
+/* Esto baja un poco el brillo del mapa para que no lastime la vista en modo noche */
+body.dark-mode iframe {
+    opacity: 0.8;
+}
+
+bidy.darl-mode .top-bar {
+    background: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .top bar a,
+body.dark-mode .top-bar span 
+body.dark.mode .top-bar i {
+    color: #b0bec5;
+}
+
+boy.dark-mode .top-bar a:hover {
+    color: var(--conalep-green);
+}
+
+body.dark-mode .main-header {
+    background: #1e1e1e;
+    border-bottom: 5px solid var(--conalep-green);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+body.dark-mode .site-title h1 {
+    color: var(--conalep-green) !important;
+}
+
+body.dark-mode .site-title p {
+    color: #ccc;
+}
+
+body.dark-mode .top-bar{
+    background: #1e1e1e;
+    border-bottom: 1px solid #333;
 }

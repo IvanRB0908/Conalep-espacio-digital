@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         index = (index + 1) % slides.length;
         updateGallery();
-    }, 4000);
+    }, 7000);
 });

@@ -23,7 +23,7 @@ ul { list-style: none; }
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
 /* =========================================
-1. TOP BAR (Barra gris arriba)
+   1. TOP BAR (Barra gris arriba)
 ========================================= */
 .top-bar { background: #f1f1f1; padding: 8px 0; font-size: 0.85rem; border-bottom: 1px solid #ddd; }
 .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
@@ -32,7 +32,7 @@ ul { list-style: none; }
 .contact-mini span { margin-left: 15px; color: var(--text-light); }
 
 /* =========================================
-2. HEADER & NAV
+   2. HEADER & NAV
 ========================================= */
 .main-header { background: var(--white); box-shadow: var(--shadow); padding: 15px 0; border-bottom: 5px solid var(--conalep-green); }
 .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
@@ -50,10 +50,10 @@ ul { list-style: none; }
 .main-nav a:hover::after { width: 100%; }
 
 /* =========================================
-3. HERO SECTION
+   3. HERO SECTION
 ========================================= */
 .hero-banner {
-    background: linear-gradient(rgba(0,126,103,0.8), rgba(0,126,103,0.8)), url('../assets/img/plantel-bg.jpg'); /* Necesitas una foto de fondo */
+    background: linear-gradient(rgba(0,126,103,0.8), rgba(0,126,103,0.8)), url('../assets/img/plantel-bg.jpg'); /* Asegúrate de tener esta imagen */
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -64,13 +64,18 @@ ul { list-style: none; }
 .hero-banner h2 { font-size: 2.5rem; margin-bottom: 10px; }
 
 /* =========================================
-4. LAYOUT PRINCIPAL (GRID 2 COLUMNAS)
+   4. LAYOUT PRINCIPAL (GRID 2 COLUMNAS)
 ========================================= */
 .main-layout {
     display: grid;
     grid-template-columns: 2fr 1fr; /* 2 partes para contenido, 1 para barra lateral */
     gap: 40px;
     margin-bottom: 60px;
+}
+
+/* Modificador para páginas de ancho completo  */
+.main-layout.one-col {
+    grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
 }
 
 /* Columna Izquierda (Contenido) */
@@ -84,34 +89,6 @@ ul { list-style: none; }
 /* Columna Derecha (Sidebar) */
 .sidebar-widget { background: var(--white); padding: 25px; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 30px; border-top: 4px solid var(--gob-guinda); }
 .sidebar-widget h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-main); }
-.career-list{
-    padding: 0;
-}
-.carrer-list li{
-    list-style: none;
-    border-bottom: 10px solid#eee;
-}
-.carrer-list li:last-child{
-    border-bottom: none;
-}
-.carrrer-list a{
-    display: block;
-    padding:12px 10px;
-    color:(--text-main);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-left: 0px solid transparent;
-    border-radius: 4px;
-}
-/*efecto para mouse*/
-.carrer-list a:hover{
-    color: var(--conalep-green);
-    background-color: #e0f2f1;
-    padding-left: 20px;
-    border-left: 5px solid var(--conalep-green);
-    font-weight: 700;
-}
-
 
 /* ESTILO ESPECIAL PARA TUS APPS (Espacio Digital) */
 .digital-space { background: #fff; border-top: 4px solid var(--conalep-green); }
@@ -130,47 +107,39 @@ ul { list-style: none; }
 .btn-link:hover { background: var(--conalep-green); color: var(--white); border-left: 4px solid var(--gob-guinda); }
 .btn-link:hover i { color: var(--white); }
 
-/* Oferta Educativa Lista */
-.career-list li { border-bottom: 1px solid #eee; padding: 10px 0; }
-.career-list li:last-child { border: none; }
-.career-list a:hover { color: var(--conalep-green); padding-left: 5px; }
-
-/*LISTA DE CARRERAS (Efecto Hover Pro)*/
-.career-list {
-    padding: 0;
-}
+/* --- LISTA DE CARRERAS (Corregido) --- */
+.career-list { padding: 0; }
 
 .career-list li {
     list-style: none;
     border-bottom: 1px solid #eee; /* Línea separadora sutil */
 }
 
-/* Quitamos la línea del último para que se vea limpio */
 .career-list li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Quitamos la línea del último */
 }
 
 .career-list a {
-    display: block;          /* Hace que todo el renglón sea clicable, no solo el texto */
-    padding: 12px 10px;      /* Espacio para respirar */
-    color: var(--text-main);
+    display: block;          /* Hace que todo el renglón sea clicable */
+    padding: 12px 10px;      
+    color: var(--text-main); /* Corregido: Agregado var() */
     font-weight: 500;
     transition: all 0.3s ease;
     border-left: 0px solid transparent;
-    border-radius: 4px;      /* Bordes un poco redondeados */
+    border-radius: 4px;
 }
 
-/* --- EL EFECTO AL PASAR EL MOUSE --- */
+/* Efecto al pasar el mouse */
 .career-list a:hover {
-    color: var(--conalep-green);       /* Texto verde oficial */
-    background-color: #e0f2f1;         /* Fondo verde menta muy clarito */
-    padding-left: 20px;                /* Se desliza a la derecha */
-    border-left: 5px solid var(--conalep-green); /* Aparece la barra lateral */
-    font-weight: 700;                  /* Se pone negrita */
+    color: var(--conalep-green);
+    background-color: #e0f2f1;
+    padding-left: 20px; /* Deslizamiento */
+    border-left: 5px solid var(--conalep-green);
+    font-weight: 700;
 }
 
 /* =========================================
-5. RESPONSIVE (MÓVIL)
+   5. RESPONSIVE (MÓVIL)
 ========================================= */
 @media (max-width: 768px) {
     .main-layout { grid-template-columns: 1fr; /* Una sola columna en celular */ }
@@ -178,12 +147,11 @@ ul { list-style: none; }
     .main-nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
     .top-bar-content { flex-direction: column; gap: 5px; text-align: center; }
 }
-/*fecha actual*/
-#fecha-actual{
-    text-transform: uppercase;
-}
 
-/* ---estilo para el mapa de google maps--- */
+/* Fecha actual */
+#fecha-actual { text-transform: uppercase; }
+
+/* --- Estilo para el mapa de Google Maps --- */
 .map-container {
     position:relative;
     width: 100%;
@@ -203,9 +171,9 @@ ul { list-style: none; }
 }
 
 /* --------------------
-    ESTILOS PARA LA TARJETA DE CARRERAS
+   ESTILOS GENÉRICOS DE TARJETAS
 --------------------- */
-.tarjeta{
+.tarjeta {
     background-color: #ffffff;
     width: 100%;
     max-width: 600px;
@@ -223,8 +191,7 @@ ul { list-style: none; }
     text-transform: uppercase;
 }
 
-.tarjeta 
-p {
+.tarjeta p {
     color: #444;
     font-size: 1rem;
     line-height: 1.6;
@@ -232,7 +199,7 @@ p {
 }
 
 /*---------------------
-ESTILOS PARA EL FOOTER
+   ESTILOS PARA EL FOOTER
 ----------------------*/
 footer {
     background-color: #2c3e50;
@@ -245,19 +212,19 @@ footer {
 .footer-container {
     max-width: 1300px;
     margin: 0 auto;
-    display: flex; /*Hace que se acomoden al lado del otro*/
-    justify-self: space-between;
+    display: flex;
+    justify-content: space-between; /* Corregido: justify-content */
     padding: 0 20px 40px;
-    flex-wrap: wrap; /*Para que se acomoden en pantallas pequeñas*/
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 .footer-col {
-    flex: 1; /*Cada columna toma el mismo espacio*/
-    min-width: 250px; /*Ancho mínimo para que no se achiquen demasiado*/
+    flex: 1;
+    min-width: 250px;
 }
 
-.footer-col h3{
+.footer-col h3 {
     color: var(--conalep-green);
     border-bottom: 2px solid #555;
     padding-bottom: 10px;
@@ -277,9 +244,7 @@ footer {
     text-align: center; 
 }
 
-.footer-col ul li {
-    margin-bottom: 10px;
-}
+.footer-col ul li { margin-bottom: 10px; }
 
 .footer-col a {
     color: #bdc3c7;
@@ -289,10 +254,12 @@ footer {
 
 .footer-col a:hover {
     color: var(--conalep-green);
-    padding-left: 5px;/*Efecto de desplazamiento*/
+    padding-left: 5px;
 }
 
-/*barra inferior copyright*/
+.footer-col strong { color: white; font-weight: 600; }
+
+/* Barra inferior copyright */
 .footer-bottom {
     background-color: #1a252f;
     text-align: center;
@@ -303,41 +270,34 @@ footer {
     color: #95a5a6;
 }
 
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-col strong {/* Estilo para resaltar texto importante */
-    color: white;
-    font-weight: 600;
-}
+.footer-bottom p { margin: 0; }
 
 /* --- ESTILOS DE LA GALERÍA DE IMÁGENES --- */
 .gallery-carousel {
     position: relative;
     width: 100%;
-    height: 350px; /* Altura fija para que no brinque la página */
-    margin: 30px 0; /* Separación de arriba y abajo */
+    height: 350px;
+    margin: 30px 0;
     border-radius: 10px;
-    overflow: hidden; /* Oculta las fotos que no están en turno */
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .gallery-track {
     display: flex;
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Animación suave */
+    transition: transform 0.5s ease-in-out;
 }
 
 .gallery-slide {
-    min-width: 100%; /* Cada foto ocupa el 100% del espacio */
+    min-width: 100%;
     height: 100%;
 }
 
 .gallery-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* RECORTA la imagen para llenar el hueco sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
@@ -357,15 +317,12 @@ footer {
     transition: background 0.3s;
 }
 
-.gallery-btn:hover {
-    background: var(--conalep-green);
-}
-
+.gallery-btn:hover { background: var(--conalep-green); }
 .prev { left: 15px; }
 .next { right: 15px; }
 
 /* ------------------
-ESTILOS PARA EL BOTON CAMBIAR TEMA
+   ESTILOS PARA EL BOTON CAMBIAR TEMA
 -------------------- */
 .theme-btn {
     background: none;
@@ -376,6 +333,9 @@ ESTILOS PARA EL BOTON CAMBIAR TEMA
     transition: color 0.3s;
 }
 
+/* =========================================
+   MODO OSCURO (CORREGIDO)
+========================================= */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -384,10 +344,13 @@ body.dark-mode {
 /* 1. LAS TARJETAS PRINCIPALES */
 body.dark-mode .info-card,
 body.dark-mode .sidebar-widget,
-body.dark-mode .news-section {
-    background-color: #1e1e1e; /* Gris oscuro */
+body.dark-mode .news-section,
+body.dark-mode .values-full-section,
+body.dark-mode .mvv-card,
+body.dark-mode .tarjeta {
+    background-color: #1e1e1e;
     color: #e0e0e0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra negra */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     border: 1px solid #333;
 }
 
@@ -409,28 +372,24 @@ body.dark-mode i {
 }
 
 /* 4. ENLACES */
-body.dark-mode a {
-    color: #4db6ac;
-}
+body.dark-mode a { color: #4db6ac; }
 
 /* 5. ARREGLO ESPECIAL PARA EL MAPA */
-/* Esto baja un poco el brillo del mapa para que no lastime la vista en modo noche */
-body.dark-mode iframe {
-    opacity: 0.8;
-}
+body.dark-mode iframe { opacity: 0.8; }
 
-bidy.darl-mode .top-bar {
+/* 6. TOP BAR Y HEADER (Corregido) */
+body.dark-mode .top-bar {
     background: #1e1e1e;
     border-bottom: 1px solid #333;
 }
 
-body.dark-mode .top bar a,
-body.dark-mode .top-bar span 
-body.dark.mode .top-bar i {
+body.dark-mode .top-bar a,
+body.dark-mode .top-bar span,
+body.dark-mode .top-bar i {
     color: #b0bec5;
 }
 
-boy.dark-mode .top-bar a:hover {
+body.dark-mode .top-bar a:hover {
     color: var(--conalep-green);
 }
 
@@ -444,11 +403,129 @@ body.dark-mode .site-title h1 {
     color: var(--conalep-green) !important;
 }
 
-body.dark-mode .site-title p {
-    color: #ccc;
+body.dark-mode .site-title p { color: #ccc; }
+
+
+/*----------------------
+   PÁGINA CONÓCENOS
+------------------------*/
+
+/* Hero pequeño para subtítulos */
+.hero-small {
+    background-color: var(--conalep-green);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-body.dark-mode .top-bar{
-    background: #1e1e1e;
-    border-bottom: 1px solid #333;
+/* Grid para Misión, Visión y Valores */
+.mvv-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.mvv-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.mvv-card:hover { transform: translateY(-5px); }
+
+/* Iconos grandes circulares */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: #e0f2f1;
+    color: var(--conalep-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+
+/* --- ESTILOS PARA LOS VALORES --- */
+.values-full-section {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.values-full-section h3 {
+    color: var(--conalep-green);
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Grid automático */
+.values-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Diseño de cada cajita de valor */
+.value-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 5px solid var(--conalep-green);
+    transition: transform 0.2s;
+}
+
+.value-item:hover {
+    transform: translateX(5px);
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.value-item h4 {
+    color: var(--conalep-green);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.value-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* AJUSTES PARA MODO OSCURO (Conocenos) */
+body.dark-mode .values-full-section {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .value-item {
+    background-color: #2c2c2c;
+    border-left-color: #4db6ac;
+}
+
+body.dark-mode .value-item:hover {
+    background-color: #333;
+}
+
+body.dark-mode .hero-small {
+    background-color: #1a252f;
+}
+
+body.dark-mode .icon-box {
+    background-color: #333;
 }

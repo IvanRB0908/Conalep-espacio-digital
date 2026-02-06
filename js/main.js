@@ -33,7 +33,7 @@ const icon = toggleButton.querySelector('i');
 
 //al hacer clic en el boton
 toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); //se actiba o desactiva el modo oscuro
+    body.classList.toggle('dark-mode'); //se activa o desactiva el modo oscuro
 
     //cambiar icono
     if(body.classList.contains('dark-mode')){

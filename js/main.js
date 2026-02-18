@@ -5,46 +5,28 @@ const fecha = new Date();
 const hora = fecha.getHours();
 let mensaje;
 
-if(hora < 12)
-{mensaje = "Buenos dias."}
-else if(hora >= 12 && hora <= 19)
-{mensaje = "Buenas tardes."}
-else{
-{mensaje = "Buenas noches"}
+const cajaSaludo = document.getElementById("saludo-hora");
+if (cajaSaludo){
+    if(hora < 12){
+    mensaje = "Buenos dias."}
+    else if(hora >= 12 && hora <= 19){
+    mensaje = "Buenas tardes."}
+    else{
+    mensaje = "Buenas noches"
+    }
+    const mensajeCompleto = mensaje + " Bienvenido al Plantel Ecatepec I";
+    cajaSaludo.innerHTML = mensajeCompleto;
 }
-let mensajeCompleto = mensaje + " Bienvenido al Plantel Ecatepec I";
-
-document.getElementById("saludo-hora").innerHTML = mensajeCompleto;
 /*============================================================================
 =            Mostrar fecha actual            =
 ==========================================================================*/
 const opciones = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}; 
-let fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
-document.getElementById("fecha-actual").innerHTML = fechaFormateada;
+const elementoFecha = document.getElementById("fecha-actual");
 
-/*============================================================================
-
-/* ----------------------------------------------------------------------------
-        MODO OSCURO
----------------------------------------------------------------------------- */
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-const icon = toggleButton.querySelector('i');
-
-//al hacer clic en el boton
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); //se activa o desactiva el modo oscuro
-
-    //cambiar icono
-    if(body.classList.contains('dark-mode')){
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else{
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-});
-
+if (elementoFecha){
+    let fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+    elementoFecha.innerHTML = fechaFormateada;
+}
 
 /*============================================================================
 =            LÓGICA DE LA GALERÍA DE IMÁGENES             =
@@ -77,3 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGallery();
     }, 7000);
 });
+
+/*funcion para detectar el click en los enlaces del menu y agregar la clase active*/
+const menuLinks = document.querySelectorAll('.main-nav a');
+
+console.log('LINKS', link.href);
+console.log('NAVEGADOR', window.location.href);
+
+menuLinks.forEach(function(link) {
+    if(link.href === window.location.href) {
+        link.classList.add("active");
+    }
+})

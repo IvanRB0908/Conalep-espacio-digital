@@ -107,6 +107,7 @@ body.dark-mode .hero-banner {
 }
 
 /* Modificador para páginas de ancho completo  */
+/*conocenos*/
 .main-layout.one-col {
     grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
 }
@@ -535,9 +536,6 @@ footer {
     font-size: 0.95rem;
     color: #666;
 }
-/*---------------------------------------------
-    FIN DE ESTILOS PARA LA PÁGINA CONÓCENOS
------------------------------------------------*/
 
 /*---------------------------------------------
 PAGINA ASPIRANTES
@@ -553,13 +551,16 @@ PAGINA ASPIRANTES
     100% { box-shadow: 0 0 0 0 rgba(0, 126, 103, 0); }
 }
 
-/*----------------------------------------------
-FIN DE ESTILOS PARA LA PÁGINA ASPIRANTES
------------------------------------------------*/
-
 /*---------------------------------------------
 PAGINA DOCENTES
 -----------------------------------------------*/
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Contenido principal + barra lateral */
+    gap: 40px;
+
+}
+
 /* Grid de Recursos (Botones grandes) */
 .resources-grid {
     display: grid;
@@ -663,20 +664,4 @@ PAGINA DOCENTES
 .link-list a:hover {
     color: var(--conalep-green);
     padding-left: 5px; /* Pequeño movimiento a la derecha */
-}
-
-/* =========================================
-AJUSTE: DISEÑO CENTRADO (SIN SIDEBAR)
-========================================= */
-
-/* Esto fuerza a que el contenido use una sola columna centrada */
-.content-wrapper.no-sidebar {
-    grid-template-columns: 1fr !important; /* Elimina la columna de la derecha */
-    max-width: 1000px;  /* Ancho máximo para que no se vea estirado en pantallas gigantes */
-    margin: 0 auto;     /* Centra el bloque en la pantalla */
-}
-
-/* Ajuste opcional para que las tarjetas de recursos se vean equilibradas */
-.content-wrapper.no-sidebar .resources-grid {
-    justify-content: center;
 }

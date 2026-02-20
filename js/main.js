@@ -31,8 +31,9 @@ if (elementoFecha){
 /*============================================================================
 =            LÓGICA DE LA GALERÍA DE IMÁGENES             =
 ==========================================================================*/
-document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.gallery-track');
+const track = document.getElementById('gallery-carrousel');
+if (track) {
+
     const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.gallery-btn.next');
     const prevBtn = document.querySelector('.gallery-btn.prev');
@@ -58,14 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         index = (index + 1) % slides.length;
         updateGallery();
     }, 7000);
-});
+};
+
 
 /*funcion para detectar el click en los enlaces del menu y agregar la clase active*/
 const menuLinks = document.querySelectorAll('.main-nav a');
-
-console.log('LINKS', link.href);
-console.log('NAVEGADOR', window.location.href);
-
 menuLinks.forEach(function(link) {
     if(link.href === window.location.href) {
         link.classList.add("active");

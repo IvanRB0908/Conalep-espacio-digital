@@ -683,3 +683,77 @@ PAGINA DOCENTES
     color: white;
     box-shadow: inset 4px 0px 0px #8a1c38;
 }
+
+
+/*---------------------------------------------
+PAGINA ALUMNOS
+-----------------------------------------------*/ 
+.procedure-grid {
+    display: grid;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.procedure-item:hover{
+    transform: translateY(-5px);
+    box-shadow: inset 4px 0px 0px #8a1c38;
+}
+
+.procedure-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #eeecec;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 4px 0px 0px var(--conalep-green);
+    transition: transform 0.2s, background-color 0.2s;
+
+}
+
+.procedure-item h3{
+    color: var(--conalep-green);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.procedure-item i {
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s; 
+}
+
+.procedure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.procedure-item a{
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .procedure-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+}
+
+.procedure-item .pro-arrow {
+    margin-left: auto; /* Empuja la flecha a la derecha */
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.procedure-item .pro-icon {
+    color: var(--conalep-green);
+    width: 25px;
+    text-align: center;
+    border-radius: 50%;
+}

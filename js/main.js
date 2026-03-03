@@ -31,8 +31,9 @@ if (elementoFecha){
 /*============================================================================
 =            LÓGICA DE LA GALERÍA DE IMÁGENES             =
 ==========================================================================*/
-const track = document.getElementById('gallery-carrousel');
+const track = document.getElementById('gallery-track');
 if (track) {
+
 
     const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.gallery-btn.next');
@@ -41,7 +42,9 @@ if (track) {
 
     function updateGallery() {
         // Mueve la tira de imágenes según el porcentaje (0%, -100%, -200%)
-        track.style.transform = `translateX(-${index * 100}%)`;
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = 'translateX(' + (-slideWidth * index) + 'px)';
+        window.addEventListener('resize', updateGallery);
     }
 
     nextBtn.addEventListener('click', () => {

@@ -835,3 +835,81 @@ PAGINA OFERTA EDUCATIVA
 .course-card .course-btn:hover {
     background-color: #005a4a;
 }
+
+/* --- ESTILO PARA LA SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) --- */
+
+.question-grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 15px;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.question-grid summary{
+    display: flex;
+    justify-content: space-between;
+    color: var(--conalep-green);
+    cursor: pointer;
+    padding: 10px;
+    list-style: none;
+
+}
+
+.question-grid details {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.question-grid details:hover {
+    background-color: #e0f2f1;
+}
+
+.question-grid details[open] summary {
+    background-color: #e0f2f1;
+    border-radius: 4px;
+}
+
+.question-grid details summary i{
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.question-grid details[open] summary i {
+    transform: rotate(180deg);
+}
+
+.question-grid details p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.question-grid details {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-color: var(--conalep-green);
+}
+
+.question-header {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;    
+}
+
+.question-grid li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.question-grid li::marker{
+    color: var(--conalep-green);
+    font-size: 1.2rem;
+}

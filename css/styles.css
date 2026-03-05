@@ -918,3 +918,78 @@ PAGINA OFERTA EDUCATIVA
     color: var(--conalep-green);
     font-size: 1.2rem;
 }
+
+/*--------------------------
+pagina electromacanica
+--------------------------*/
+.electromecanica-hero {
+    background-image: url(../assets/multimedia/hero-electro.webp);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgb(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+    background-color: var(--conalep-green);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    border-color: white;
+}
+
+.competencias-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/*informacion general de la carrera*/
+
+.competencias-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.competencias-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--conalep-green);
+}
+
+.competencias-card i {
+    font-size: 40px;
+    color: var(--conalep-green);
+    margin-bottom: 15px;
+}
+/*conoce la disiplina*/
+.info-section {
+
+}

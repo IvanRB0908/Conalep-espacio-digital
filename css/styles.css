@@ -991,5 +991,74 @@ pagina electromacanica
 }
 /*conoce la disiplina*/
 .info-section {
+    padding: 50px 0;
+}
 
+.definition-bg {
+    background-color: #f9fbfd;
+}
+
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.info-image {
+    flex: 1;
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h2 {
+    margin-top: 10px;
+    font-size: 2.0rem;
+    color: #333;
+}
+
+
+.highlight-text {
+    border-left: 4px solid var(--conalep-green);
+    padding-left: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+.application-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    background: white;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.app-item:hover {
+    background: #eef8f2;
+}
+
+.app-item i {
+    font-size: 20px;
+    color: var(--conalep-green);
+    background: rgba(0,121,107,0.1);
+    padding: 15px;
+    border-radius: 50%;
 }

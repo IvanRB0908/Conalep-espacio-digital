@@ -50,6 +50,79 @@ ul { list-style: none; }
 .main-nav a:hover::after { width: 100%; }
 
 /* =========================================
+   MENÚ HAMBURGUESA PARA MÓVILES
+========================================= */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: var(--text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Estado activo del menú hamburguesa */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menú móvil oculto por defecto */
+.main-nav ul {
+    transition: all 0.3s ease;
+}
+
+/* Clase para mostrar menú móvil */
+.main-nav.mobile-menu ul {
+    display: flex !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid #eee;
+    gap: 15px;
+}
+
+.main-nav.mobile-menu li {
+    width: 100%;
+    text-align: center;
+}
+
+.main-nav.mobile-menu a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.main-nav.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
    3. HERO SECTION
 ========================================= */
 /* --- BANNER PRINCIPAL (Estilo Foco / Radial) --- */

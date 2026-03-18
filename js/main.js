@@ -71,4 +71,36 @@ menuLinks.forEach(function(link) {
     if(link.href === window.location.href) {
         link.classList.add("active");
     }
-})
+});
+
+/*============================================================================
+=            FUNCIONALIDAD DEL MENÚ HAMBURGUESA            =
+==========================================================================*/
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const mainNav = document.querySelector('.main-nav');
+
+if (hamburgerMenu && mainNav) {
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle clase active para animación de hamburguesa
+        this.classList.toggle('active');
+        // Toggle clase mobile-menu para mostrar/ocultar menú
+        mainNav.classList.toggle('mobile-menu');
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburgerMenu.classList.remove('active');
+            mainNav.classList.remove('mobile-menu');
+        });
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', function(event) {
+        if (!mainNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            hamburgerMenu.classList.remove('active');
+            mainNav.classList.remove('mobile-menu');
+        }
+    });
+}

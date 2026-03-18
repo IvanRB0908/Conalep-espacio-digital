@@ -1,0 +1,394 @@
+/* =========================================
+   RESPONSIVE DESIGN - Conalep Ecatepec I
+   Estilos para dispositivos móviles y tablets
+========================================= */
+
+/* TABLETS (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        max-width: 1000px;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sidebar-column {
+        order: -1; /* Sidebar arriba en tablets */
+    }
+
+    .gallery-track {
+        height: 300px;
+    }
+
+    .gallery-slide img {
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* MÓVILES GRANDES (481px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        width: 98%;
+        padding: 0 10px;
+    }
+
+    /* Header */
+    .main-header {
+        padding: 10px 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .site-title h1 {
+        font-size: 1.2rem;
+    }
+
+    .site-title p {
+        font-size: 0.7rem;
+    }
+
+    /* Navegación móvil */
+    .main-nav {
+        position: relative;
+    }
+
+    .main-nav ul {
+        display: none; /* Oculto por defecto en móvil */
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostrar hamburguesa en móvil */
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+
+    /* Top Bar */
+    .top-bar {
+        padding: 5px 0;
+        font-size: 0.75rem;
+    }
+
+    .top-bar-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-mini {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Layout principal */
+    .main-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .content-column,
+    .sidebar-column {
+        padding: 0;
+    }
+
+    /* Sidebar */
+    .sidebar-widget {
+        margin-bottom: 20px;
+    }
+
+    .sidebar-widget h3 {
+        font-size: 1.1rem;
+    }
+
+    .quick-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-link {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .career-list li {
+        margin-bottom: 8px;
+    }
+
+    /* Contenido */
+    .info-card {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Galería */
+    .gallery-carousel {
+        margin: 20px 0;
+    }
+
+    .gallery-track {
+        height: 250px;
+    }
+
+    .gallery-slide img {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .gallery-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    /* Mapa */
+    .map-container {
+        padding-top: 60%;
+        margin: 15px 0;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    /* Páginas específicas */
+    .hero-banner h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-small h2 {
+        font-size: 1.3rem;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mvv-card {
+        padding: 20px;
+    }
+
+    .values-grid-detailed {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .timeline-container {
+        padding-left: 0;
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .timeline-content {
+        margin-left: 40px;
+    }
+}
+
+/* MÓVILES PEQUEÑOS (hasta 480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    /* Header más compacto */
+    .main-header {
+        padding: 8px 0;
+    }
+
+    .site-title h1 {
+        font-size: 1.1rem;
+    }
+
+    .site-title p {
+        font-size: 0.65rem;
+    }
+
+    /* Navegación más pequeña */
+    .main-nav a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    /* Top bar más compacto */
+    .top-bar {
+        font-size: 0.7rem;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+    }
+
+    /* Galería más pequeña */
+    .gallery-track {
+        height: 200px;
+    }
+
+    .gallery-slide img {
+        height: 200px;
+    }
+
+    .gallery-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    /* Sidebar widgets */
+    .sidebar-widget h3 {
+        font-size: 1rem;
+    }
+
+    .btn-link {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .btn-link i {
+        margin-right: 8px;
+    }
+
+    /* Contenido */
+    .info-card {
+        padding: 12px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .plantel-details p {
+        font-size: 0.9rem;
+    }
+
+    /* Mapa más pequeño */
+    .map-container {
+        padding-top: 65%;
+    }
+
+    /* Footer */
+    .footer-col h3 {
+        font-size: 1rem;
+    }
+
+    .footer-col p,
+    .footer-col li {
+        font-size: 0.85rem;
+    }
+
+    /* Páginas específicas */
+    .hero-banner,
+    .hero-small {
+        padding: 30px 0;
+    }
+
+    .hero-banner h2,
+    .hero-small h2 {
+        font-size: 1.2rem;
+    }
+
+    .mvv-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .value-item h4 {
+        font-size: 0.95rem;
+    }
+}
+
+/* ORIENTACIÓN HORIZONTAL EN MÓVILES */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-banner,
+    .hero-small {
+        padding: 20px 0;
+    }
+
+    .hero-banner h2,
+    .hero-small h2 {
+        font-size: 1.1rem;
+    }
+
+    .gallery-track {
+        height: 180px;
+    }
+
+    .gallery-slide img {
+        height: 180px;
+    }
+}
+
+/* IMPRESIÓN */
+@media print {
+    .top-bar,
+    .gallery-carousel,
+    .sidebar-column,
+    .footer-bottom {
+        display: none !important;
+    }
+
+    .main-layout {
+        display: block !important;
+    }
+
+    .content-column {
+        width: 100% !important;
+    }
+
+    body {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .info-card {
+        break-inside: avoid;
+        margin-bottom: 20px;
+    }
+}

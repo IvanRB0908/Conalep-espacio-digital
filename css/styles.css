@@ -42,6 +42,18 @@ ul { list-style: none; }
 .site-title p { font-size: 0.8rem; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
 
 /* Menú */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Asegura que el botón hamburguesa siempre esté al final */
+.hamburger-menu {
+    margin-left: auto;
+}
 .main-nav ul { display: flex; gap: 20px; }
 .main-nav a { font-weight: 500; color: var(--text-main); font-size: 1rem; padding: 5px 0; position: relative; }
 .main-nav a:hover, .main-nav a.active { color: var(--conalep-green); }
@@ -105,6 +117,11 @@ ul { list-style: none; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-top: 1px solid #eee;
     gap: 15px;
+    z-index: 1000;
+}
+
+.hamburger-menu {
+    z-index: 1100;
 }
 
 .main-nav.mobile-menu li {

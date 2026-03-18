@@ -34,17 +34,15 @@ if (elementoFecha){
 const track = document.getElementById('gallery-track');
 if (track) {
 
-
     const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.gallery-btn.next');
     const prevBtn = document.querySelector('.gallery-btn.prev');
     let index = 0;
 
     function updateGallery() {
-        // Mueve la tira de imágenes según el porcentaje (0%, -100%, -200%)
+        // Mueve la tira de imágenes según el tamaño actual de la pantalla
         const slideWidth = slides[0].getBoundingClientRect().width;
         track.style.transform = 'translateX(' + (-slideWidth * index) + 'px)';
-        window.addEventListener('resize', updateGallery);
     }
 
     nextBtn.addEventListener('click', () => {
@@ -57,7 +55,27 @@ if (track) {
         updateGallery();
     });
 
-    // Opcional: Auto-play cada 4 segundos
+    // Ajustar al redimensionar ventana
+    window.addEventListener('resize', () => {
+        updateGallery();
+    });
+
+    // Inicializar al cargar imágenes (para evitar anchos erróneos)
+    const slideImages = track.querySelectorAll('img');
+    const imagesLoaded = Array.from(slideImages).map(img => new Promise(resolve => {
+        if (img.complete) {
+            resolve();
+        } else {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve);
+        }
+    }));
+
+    Promise.all(imagesLoaded).then(() => {
+        updateGallery();
+    });
+
+    // Auto-play (opcional)
     setInterval(() => {
         index = (index + 1) % slides.length;
         updateGallery();

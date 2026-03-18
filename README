@@ -1,0 +1,107 @@
+# Conalep Espacio Digital
+
+Sitio web oficial del Plantel Conalep Ecatepec I, desarrollado como proyecto de modernización digital para la institución educativa.
+
+## 📋 Descripción
+
+Este proyecto es un sitio web estático que presenta la información institucional del Colegio Nacional de Educación Profesional Técnica (CONALEP) Plantel Ecatepec I. Incluye secciones sobre la historia, oferta educativa, servicios, docentes y espacios digitales para estudiantes y comunidad.
+
+## 🎯 Características Principales
+
+### Páginas del Sitio
+- **Inicio**: Información general del plantel, galería de imágenes, enlaces directos a plataformas digitales
+- **Conócenos**: Historia institucional, misión, visión y valores
+- **Trámites y Servicios**: Información sobre procesos administrativos
+- **Docentes**: Información sobre el cuerpo docente
+- **Oferta Educativa**: Detalles de las carreras disponibles:
+  - Informática
+  - Mecatrónica
+  - Productividad
+  - Electromecánica Industrial
+- **Aspirantes**: Información para futuros estudiantes
+
+### Funcionalidades Interactivas
+- **Saludo Dinámico**: Mensaje de bienvenida que cambia según la hora del día
+- **Galería de Imágenes**: Carrusel automático con fotos del plantel
+- **Navegación Responsiva**: Menú adaptable a dispositivos móviles
+- **Enlaces Directos**: Accesos rápidos a plataformas como SAAE, Office 365, Territorium y Becas Benito Juárez
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5**: Estructura semántica del sitio
+- **CSS3**: Estilos responsivos con variables CSS personalizadas
+- **JavaScript**: Funcionalidades dinámicas (galería, saludo por hora)
+- **Font Awesome**: Iconografía
+- **Google Fonts**: Tipografía Roboto
+- **Google Maps**: Integración de mapa de ubicación
+
+## 📁 Estructura del Proyecto
+
+```
+Conalep-espacio-digital/
+├── index.html                 # Página principal
+├── README.md                  # Este archivo
+├── assets/
+│   └── multimedia/            # Imágenes y recursos multimedia
+├── css/
+│   ├── styles.css             # Estilos principales
+├── js/
+│   └── main.js                # Funcionalidades JavaScript
+└── pages/
+    ├── aspirantes.html        # Información para aspirantes
+    ├── conocenos.html         # Acerca del plantel
+    ├── docentes.html          # Información docente
+    ├── oferta_educativa.html  # Oferta académica general
+    ├── tramites_servicios.html # Trámites y servicios
+    └── carreras/
+        ├── electromecanica.html
+        ├── informatica.html
+        ├── mecatronica.html
+        └── productividad.html
+```
+
+## 🚀 Instalación y Uso
+
+Este es un sitio web estático, por lo que no requiere instalación de dependencias complejas.
+
+### Requisitos
+- Navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Conexión a internet para cargar fuentes externas y mapas
+
+### Visualización
+1. Clona o descarga el repositorio
+2. Abre el archivo `index.html` en tu navegador web
+3. Navega por las diferentes secciones usando el menú
+
+## 📞 Información de Contacto
+
+**Plantel Conalep Ecatepec I**
+- **Dirección**: Cerrada Conalep s/n, Col. Cd. Cuauhtémoc, Ecatepec de Morelos, Estado de México C.P. 55067
+- **Teléfono**: 55 88 79 09 13
+- **Email**: ecatepec1@conalepmex.edu.mx
+- **Horarios**: Lunes a Viernes de 07:00 a 21:00 hrs
+
+### Redes Sociales
+- [Facebook](https://www.facebook.com/p/Conalep-Plantel-Ecatepec-I-100057241038247/)
+- [Twitter](https://x.com/ConalepEca1)
+- [TikTok](https://www.tiktok.com/@conalepecatepec1)
+- [Instagram](https://www.instagram.com/conalepecatepecuno/)
+
+## 👨‍💻 Desarrollador
+
+**Ivan Rojas Barajas**
+- Proyecto desarrollado como parte de prácticas profesionales/estancias
+- Enfoque en modernización digital del plantel
+
+## 📄 Licencia
+
+© 2026 Conalep Ecatepec I. Todos los derechos reservados.
+
+Este proyecto fue desarrollado para fines educativos e institucionales. Los derechos de autor pertenecen al Colegio Nacional de Educación Profesional Técnica (CONALEP).
+
+## 🔗 Enlaces de Interés
+
+- [Sitio Oficial de CONALEP](https://www.conalep.edu.mx/)
+- [Secretaría de Educación Pública](https://www.gob.mx/sep)
+- [Portal del Alumno (SAAE)](https://alumno.conalep.edu.mx/saac)
+- [Beca Benito Juárez](https://www.gob.mx/becasbenitojuarez)

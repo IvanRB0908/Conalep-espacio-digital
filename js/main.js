@@ -122,3 +122,58 @@ if (hamburgerMenu && mainNav) {
         }
     });
 }
+
+// Lista de páginas para buscar (títulos y URLs relativos)
+const pages = [
+    { title: 'Inicio', url: 'index.html' },
+    { title: 'Conocenos', url: 'pages/conocenos.html' },
+    { title: 'Tramites y servicios', url: 'pages/tramites_servicios.html' },
+    { title: 'Docentes', url: 'pages/docentes.html' },
+    { title: 'Informática', url: 'pages/carreras/informatica.html' },
+    { title: 'Mecatrónica', url: 'pages/carreras/mecatronica.html' },
+    { title: 'Productividad', url: 'pages/carreras/productividad.html' },
+    { title: 'Electromecanica Industrial', url: 'pages/carreras/electromecanica.html' }
+];
+
+// Elementos del DOM
+const searchInput = document.getElementById('search-input');
+const suggestionsList = document.getElementById('suggestions');
+
+// Función para mostrar sugerencias
+function showSuggestions(query) {
+    suggestionsList.innerHTML = '';
+    if (query.length === 0) return;
+
+    const filteredPages = pages.filter(page =>
+        page.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    filteredPages.forEach(page => {
+        const li = document.createElement('li');
+        li.textContent = page.title;
+        li.addEventListener('click', () => {
+            window.location.href = page.url;
+        });
+        suggestionsList.appendChild(li);
+    });
+}
+
+// Evento de entrada en el buscador
+searchInput.addEventListener('input', (e) => {
+    showSuggestions(e.target.value);
+});
+
+// Ocultar sugerencias al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
+        suggestionsList.innerHTML = '';
+    }
+});
+
+// Agrega esta pequeña mejora para que al presionar "Enter" también busque
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const firstSuggestion = suggestionsList.querySelector('li');
+        if (firstSuggestion) firstSuggestion.click();
+    }
+});

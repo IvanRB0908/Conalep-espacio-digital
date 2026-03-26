@@ -34,12 +34,26 @@ ul { list-style: none; }
 /* =========================================
    2. HEADER & NAV
 ========================================= */
-.main-header { background: var(--white); box-shadow: var(--shadow); padding: 15px 0; border-bottom: 5px solid var(--conalep-green); }
-.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.main-header { background: var(--white); box-shadow: var(--shadow); padding: 15px 0; border-bottom: 5px solid var(--conalep-green); position: sticky; top: 0; z-index: 1000; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
 .logo-area { display: flex; align-items: center; gap: 15px; }
-.logo { height: 50px; }
-.site-title h1 { font-size: 1.5rem; color: var(--conalep-green); line-height: 1.1; }
-.site-title p { font-size: 0.8rem; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+.logo { height: 55px; }
+.site-title h1 { font-size: 1.5rem; color: var(--conalep-green); line-height: 1.1; margin: 0; }
+.site-title p { font-size: 0.8rem; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin: 0; }
+
+.nav-search { display: flex; align-items: center; gap: 20px; width: 100%; justify-content: space-between; flex-wrap: wrap; }
+
+.main-nav { flex: 1; }
+.main-nav ul { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: flex-start; }
+
+.search-container { min-width: 240px; max-width: 380px; width: 100%; flex-shrink: 0; }
+.search-box { position: relative; }
+.search-box input { width: 100%; padding: 10px 40px 10px 14px; font-size: 1rem; border: 1px solid #ccc; border-radius: 35px; outline: none; transition: border-color .25s ease; }
+.search-box input:focus { border-color: var(--conalep-green); }
+.search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-light); font-size: 1rem; }
+
+.suggestions-list { position: absolute; width: 100%; background: #fff; border: 1px solid #ddd; border-top: none; border-radius: 0 0 8px 8px; max-height: 220px; overflow-y: auto; z-index: 1200; }
+
 
 /* Menú */
 .main-nav {
@@ -1192,13 +1206,14 @@ pagina electromacanica
     background: #fffdf7;
 }
 
-/*diseño del buscador*/
+/****diseño del buscador*****/
+
 /* Contenedor principal alineado */
 .search-container {
     position: relative;
-    max-width: 400px; /* Reducimos el ancho para que sea más elegante */
+    max-width: 400px; 
     width: 100%;
-    margin: 10px 0; /* Espaciado vertical */
+    margin: 10px 0; 
 }
 
 .search-box {
@@ -1209,9 +1224,9 @@ pagina electromacanica
 
 #search-input {
     width: 100%;
-    padding: 10px 45px 10px 20px; /* Espacio para el icono a la derecha */
+    padding: 10px 45px 10px 20px; 
     border: 2px solid #e0e0e0;
-    border-radius: 25px; /* Bordes ovalados modernos */
+    border-radius: 25px; 
     font-family: 'Roboto', sans-serif;
     font-size: 0.95rem;
     transition: all 0.3s ease;
@@ -1220,7 +1235,7 @@ pagina electromacanica
 
 /* Efecto al hacer clic (Focus) */
 #search-input:focus {
-    border-color: var(--conalep-green); /* Usamos tu color institucional */
+    border-color: var(--conalep-green); 
     box-shadow: 0 0 8px rgba(0, 121, 107, 0.2);
 }
 

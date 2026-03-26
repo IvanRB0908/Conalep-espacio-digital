@@ -139,41 +139,43 @@ const pages = [
 const searchInput = document.getElementById('search-input');
 const suggestionsList = document.getElementById('suggestions');
 
-// Función para mostrar sugerencias
-function showSuggestions(query) {
-    suggestionsList.innerHTML = '';
-    if (query.length === 0) return;
+if (searchInput && suggestionsList) {
+    // Función para mostrar sugerencias
+    function showSuggestions(query) {
+        suggestionsList.innerHTML = '';
+        if (query.length === 0) return;
 
-    const filteredPages = pages.filter(page =>
-        page.title.toLowerCase().includes(query.toLowerCase())
-    );
+        const filteredPages = pages.filter(page =>
+            page.title.toLowerCase().includes(query.toLowerCase())
+        );
 
-    filteredPages.forEach(page => {
-        const li = document.createElement('li');
-        li.textContent = page.title;
-        li.addEventListener('click', () => {
-            window.location.href = page.url;
+        filteredPages.forEach(page => {
+            const li = document.createElement('li');
+            li.textContent = page.title;
+            li.addEventListener('click', () => {
+                window.location.href = page.url;
+            });
+            suggestionsList.appendChild(li);
         });
-        suggestionsList.appendChild(li);
+    }
+
+    // Evento de entrada en el buscador
+    searchInput.addEventListener('input', (e) => {
+        showSuggestions(e.target.value);
+    });
+
+    // Ocultar sugerencias al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
+            suggestionsList.innerHTML = '';
+        }
+    });
+
+    // Agrega esta pequeña mejora para que al presionar "Enter" también busque
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const firstSuggestion = suggestionsList.querySelector('li');
+            if (firstSuggestion) firstSuggestion.click();
+        }
     });
 }
-
-// Evento de entrada en el buscador
-searchInput.addEventListener('input', (e) => {
-    showSuggestions(e.target.value);
-});
-
-// Ocultar sugerencias al hacer clic fuera
-document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
-        suggestionsList.innerHTML = '';
-    }
-});
-
-// Agrega esta pequeña mejora para que al presionar "Enter" también busque
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        const firstSuggestion = suggestionsList.querySelector('li');
-        if (firstSuggestion) firstSuggestion.click();
-    }
-});

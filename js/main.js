@@ -123,16 +123,47 @@ if (hamburgerMenu && mainNav) {
     });
 }
 
-// Lista de páginas para buscar (títulos y URLs relativos)
+// Detectar profundidad de la página actual y construir rutas dinámicamente
+function getBasePath() {
+    const path = window.location.pathname;
+    // Si estamos en /pages/ o /pages/carreras/, necesitamos subir niveles
+    if (path.includes('/pages/carreras/')) {
+        return '../../'; // 2 niveles: /pages/carreras/ -> /
+    } else if (path.includes('/pages/')) {
+        return '../'; // 1 nivel: /pages/ -> /
+    }
+    return './'; // Estamos en raíz
+}
+
+const basePath = getBasePath();
+
+// Lista de páginas con rutas relativas a la raíz (se ajustan dinámicamente)
 const pages = [
-    { title: 'Inicio', url: 'index.html' },
-    { title: 'Conocenos', url: 'pages/conocenos.html' },
-    { title: 'Tramites y servicios', url: 'pages/tramites_servicios.html' },
-    { title: 'Docentes', url: 'pages/docentes.html' },
-    { title: 'Informática', url: 'pages/carreras/informatica.html' },
-    { title: 'Mecatrónica', url: 'pages/carreras/mecatronica.html' },
-    { title: 'Productividad', url: 'pages/carreras/productividad.html' },
-    { title: 'Electromecanica Industrial', url: 'pages/carreras/electromecanica.html' }
+    // Páginas principales
+    { title: 'Inicio', url: basePath + 'index.html' },
+    { title: 'Conócenos', url: basePath + 'pages/conocenos.html' },
+    { title: 'Trámites y servicios', url: basePath + 'pages/tramites_servicios.html' },
+    { title: 'Docentes', url: basePath + 'pages/docentes.html' },
+    
+    // Carreras
+    { title: 'Informática', url: basePath + 'pages/carreras/informatica.html' },
+    { title: 'Mecatrónica', url: basePath + 'pages/carreras/mecatronica.html' },
+    { title: 'Productividad', url: basePath + 'pages/carreras/productividad.html' },
+    { title: 'Electromecanica Industrial', url: basePath + 'pages/carreras/electromecanica.html' },
+    
+    // Nuevos alumnos
+    { title: 'Aspirantes', url: basePath + 'pages/aspirantes.html' },
+    
+    // Oferta educativa
+    { title: 'Oferta educativa', url: basePath + 'pages/oferta_educativa.html' },
+    
+    // Trámites y servicios (apartados)
+    { title: 'Servicio social y prácticas profesionales', url: 'https://www.conalepmex.edu.mx/alumnos/servicio-social-y-practicas-profesionales.html' },
+    { title: 'Reglamento', url: 'https://www.conalep.edu.mx/sites/default/files/2023-09/50_Reglas_de_Convivencia_Escolar_3SO_JD_firma.pdf' },
+    { title: 'Linea de captura', url: 'https://sfpya.edomexico.gob.mx/recaudacion/' },
+    { title: 'Titulación', url: 'https://www.conalepmex.edu.mx/alumnos/titulacion.html' },
+    { title: 'Egresados', url: 'https://mi.conalepmex.edu.mx/egresados/inicio-sesion' },
+    { title: 'Noticias', url: 'https://www.conalepmex.edu.mx/alumnos/noticias.html' }
 ];
 
 // Elementos del DOM
@@ -153,7 +184,12 @@ if (searchInput && suggestionsList) {
             const li = document.createElement('li');
             li.textContent = page.title;
             li.addEventListener('click', () => {
-                window.location.href = page.url;
+                // Detectar si es URL externo (comienza con http:// o https://)
+                if (page.url.startsWith('http://') || page.url.startsWith('https://')) {
+                    window.open(page.url, '_blank'); // Abrir en nueva pestaña
+                } else {
+                    window.location.href = page.url; // Navegar en la misma pestaña
+                }
             });
             suggestionsList.appendChild(li);
         });

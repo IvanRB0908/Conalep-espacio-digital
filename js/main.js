@@ -123,41 +123,80 @@ if (hamburgerMenu && mainNav) {
     });
 }
 
-// Detectar profundidad de la página actual y construir rutas dinámicamente
-function getBasePath() {
+// Detectar ubicación actual y construir rutas relativas correctas
+function getPageRoutes() {
     const path = window.location.pathname;
-    // Si estamos en /pages/ o /pages/carreras/, necesitamos subir niveles
+    
+    // Si estamos en una página dentro de pages/carreras/
     if (path.includes('/pages/carreras/')) {
-        return '../../'; // 2 niveles: /pages/carreras/ -> /
-    } else if (path.includes('/pages/')) {
-        return '../'; // 1 nivel: /pages/ -> /
+        return {
+            'Inicio': '../../index.html',
+            'Conócenos': '../../pages/conocenos.html',
+            'Trámites y servicios': '../../pages/tramites_servicios.html',
+            'Docentes': '../../pages/docentes.html',
+            'Informática': './informatica.html',
+            'Mecatrónica': './mecatronica.html',
+            'Productividad': './productividad.html',
+            'Electromecanica Industrial': './electromecanica.html',
+            'Aspirantes': '../../pages/aspirantes.html',
+            'Oferta educativa': '../../pages/oferta_educativa.html'
+        };
     }
-    return './'; // Estamos en raíz
+    // Si estamos en una página dentro de pages/
+    else if (path.includes('/pages/')) {
+        return {
+            'Inicio': '../index.html',
+            'Conócenos': './conocenos.html',
+            'Trámites y servicios': './tramites_servicios.html',
+            'Docentes': './docentes.html',
+            'Informática': './carreras/informatica.html',
+            'Mecatrónica': './carreras/mecatronica.html',
+            'Productividad': './carreras/productividad.html',
+            'Electromecanica Industrial': './carreras/electromecanica.html',
+            'Aspirantes': './aspirantes.html',
+            'Oferta educativa': './oferta_educativa.html'
+        };
+    }
+    // Si estamos en la raíz
+    else {
+        return {
+            'Inicio': 'index.html',
+            'Conócenos': 'pages/conocenos.html',
+            'Trámites y servicios': 'pages/tramites_servicios.html',
+            'Docentes': 'pages/docentes.html',
+            'Informática': 'pages/carreras/informatica.html',
+            'Mecatrónica': 'pages/carreras/mecatronica.html',
+            'Productividad': 'pages/carreras/productividad.html',
+            'Electromecanica Industrial': 'pages/carreras/electromecanica.html',
+            'Aspirantes': 'pages/aspirantes.html',
+            'Oferta educativa': 'pages/oferta_educativa.html'
+        };
+    }
 }
 
-const basePath = getBasePath();
+const pageRoutes = getPageRoutes();
 
-// Lista de páginas con rutas relativas a la raíz (se ajustan dinámicamente)
+// Lista de páginas con rutas que se adaptan a la ubicación actual
 const pages = [
     // Páginas principales
-    { title: 'Inicio', url: basePath + 'index.html' },
-    { title: 'Conócenos', url: basePath + 'pages/conocenos.html' },
-    { title: 'Trámites y servicios', url: basePath + 'pages/tramites_servicios.html' },
-    { title: 'Docentes', url: basePath + 'pages/docentes.html' },
+    { title: 'Inicio', url: pageRoutes['Inicio'] },
+    { title: 'Conócenos', url: pageRoutes['Conócenos'] },
+    { title: 'Trámites y servicios', url: pageRoutes['Trámites y servicios'] },
+    { title: 'Docentes', url: pageRoutes['Docentes'] },
     
     // Carreras
-    { title: 'Informática', url: basePath + 'pages/carreras/informatica.html' },
-    { title: 'Mecatrónica', url: basePath + 'pages/carreras/mecatronica.html' },
-    { title: 'Productividad', url: basePath + 'pages/carreras/productividad.html' },
-    { title: 'Electromecanica Industrial', url: basePath + 'pages/carreras/electromecanica.html' },
+    { title: 'Informática', url: pageRoutes['Informática'] },
+    { title: 'Mecatrónica', url: pageRoutes['Mecatrónica'] },
+    { title: 'Productividad', url: pageRoutes['Productividad'] },
+    { title: 'Electromecanica Industrial', url: pageRoutes['Electromecanica Industrial'] },
     
     // Nuevos alumnos
-    { title: 'Aspirantes', url: basePath + 'pages/aspirantes.html' },
+    { title: 'Aspirantes', url: pageRoutes['Aspirantes'] },
     
     // Oferta educativa
-    { title: 'Oferta educativa', url: basePath + 'pages/oferta_educativa.html' },
+    { title: 'Oferta educativa', url: pageRoutes['Oferta educativa'] },
     
-    // Trámites y servicios (apartados)
+    // Trámites y servicios (apartados - enlaces externos)
     { title: 'Servicio social y prácticas profesionales', url: 'https://www.conalepmex.edu.mx/alumnos/servicio-social-y-practicas-profesionales.html' },
     { title: 'Reglamento', url: 'https://www.conalep.edu.mx/sites/default/files/2023-09/50_Reglas_de_Convivencia_Escolar_3SO_JD_firma.pdf' },
     { title: 'Linea de captura', url: 'https://sfpya.edomexico.gob.mx/recaudacion/' },

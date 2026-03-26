@@ -44,16 +44,16 @@
     .header-inner {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .logo-area {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 
     .logo {
-        height: 40px;
+        height: 45px;
     }
 
     .site-title h1 {
@@ -65,25 +65,45 @@
     }
 
     /* Navegación móvil */
+    .nav-search {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        align-items: stretch;
+    }
+
     .main-nav {
-        position: relative;
+        width: 100%;
+        justify-content: space-between;
     }
 
     .main-nav ul {
         display: none; /* Oculto por defecto en móvil */
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 0;
     }
 
     .hamburger-menu {
         display: flex; /* Mostrar hamburguesa en móvil */
+        margin-left: auto;
     }
 
     .main-nav a {
         font-size: 0.9rem;
-        padding: 12px 15px;
+        padding: 10px 8px;
     }
+
+    /* Search Container en móvil */
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        order: -1;
+    }
+
+    .search-box input {
+        font-size: 0.95rem;
+        padding: 10px 38px 10px 12px;
+    }
+
 
     /* Top Bar */
     .top-bar {
